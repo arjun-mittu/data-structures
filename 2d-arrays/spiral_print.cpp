@@ -15,7 +15,7 @@ void spiralprint(int a[][10],int m,int n){
 			cout<<a[i][ec]<<" ";
 		}
 		ec--;
-		if(er>sr){
+		if(er>sr){	
 		for(int i=ec;i>=sc;i--){
 			cout<<a[er][i]<<" ";
 		}
