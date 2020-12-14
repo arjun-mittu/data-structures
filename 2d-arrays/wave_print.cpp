@@ -5,12 +5,12 @@ void waveprint(int a[][10],int m,int n){
 	for (int col=0;col<m;col++){
         if(col%2==0){
             for(int row=0;row<n;row++){
-                cout<<a[row][col]<<" ";}
+                cout<<a[row][col]<<",";}
             }
         
         else{
             for(int row=n-1;row>=0;row--){
-                cout<<a[row][col]<<' ';
+                cout<<a[row][col]<<",";
             }
         }
         }
@@ -27,5 +27,6 @@ int main(){
 		}
 	}
 	waveprint(a,m,n);
+	cout<<"END";
 	return 0;
 }

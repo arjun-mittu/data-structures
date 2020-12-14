@@ -18,13 +18,12 @@ void rotateimg(int a[][10],int m,int n){
                 }
             }
         }
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n;i++){
         cout<<endl;
         for(int j=0;j<m;j++){
             cout<<a[i][j]<<" ";
         }
     }
-    
 
 }
 int main(){
