@@ -165,14 +165,101 @@ void reverse(node *&head){
     }
     head=prev;
 }
+node *recreverse(node *head){
+    //smallest linked list
+    if(head->next==NULL || head==NULL){
+        return head;
+    }
+
+    // rec case
+    node *shead=recreverse(head->next);
+    /*node *temp=shead;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }*/
+    // modfied approach
+    node *temp=head->next;
+    head->next=NULL;
+    temp->next=head;
+    return shead;
+
+}
+node *midpoint(node *head){
+    //it check 0 node or no nodes
+    if(head==NULL || head->next==NULL){
+        return head;
+    }
+    node *slow=head;
+    node *fast=head->next;
+    while(fast!=NULL && fast->next!=NULL){
+        fast=fast->next->next;
+        slow=slow->next;
+    }
+    return slow;
+}
+
+node *merge(node *a,node *b){
+    if(a==NULL){
+        return b;
+    }
+    if(b==NULL){
+        return a;
+    }
+    node *c;
+    if(a->data < b->data){
+        c=a;
+        c->next=merge(a->next,b);
+    }
+    else{
+        c=b;
+        c->next=merge(a,b->next);
+    }
+    return c;
+}
+node *mergesort(node *head){
+    if(head==NULL || head->next==NULL){
+        return head;
+    }
+    //rec case
+    //1. break
+    node *mid=midpoint(head);
+    node *a =head;
+    node *b=mid->next;
+    mid->next==NULL;
+    //2. rec sort
+    a=mergesort(a);
+    b=mergesort(b);
+    node *c =merge(a,b);
+    return c;
+}
+bool detectcycle(node *head){
+    node *slow=head;
+    node *fast=head;
+    while(fast!=NULL && fast->next!=NULL){
+        fast=fast->next->next;
+        slow=slow->next;
+        if(fast==slow){
+            return true;
+        }
+    }
+    return false; 
+}
 int main(){
     //node *head=take_input();
     //node *head2=take_input();
     node *head;
+  //  node *head2;
     cin>>head;
-    cout<<head;
-    reverse(head);
-    cout<<head;
+    cout<<head<<endl;
+    node* new_head=mergesort(head);
+    cout<<new_head<<endl;
+    //node *newhead=merge(head,head2);
+    //cout<<newhead;
+    //reverse(head);
+    //head=recreverse(head);
+   // node *mid=midpoint(head);
+    //cout<<mid->data<<endl;
+    //cout<<head;
     //node *head2;
     //cin>>head>>head2;
     //cout<<head<<head2;
