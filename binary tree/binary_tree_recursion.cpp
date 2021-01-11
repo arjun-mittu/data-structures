@@ -115,7 +115,10 @@ int sum(node *root){
     if(root==NULL){
         return 0;
     }
-    return ((root->data)+sum(root->left)+sum(root->left));
+    int leftsum=sum(root->left);
+    int rightsum=sum(root->right);
+    //return ((root->data)+sum(root->left)+sum(root->left));
+    return (root->data + leftsum + rightsum);
 }
 
 int diameter(node *root){
@@ -202,8 +205,8 @@ int main(){
     bfs(root);
     cout<<endl;
     cout<<count(root);
-    cout<<endl;
-    cout<<sum(root);*/
+    cout<<endl;*/
+    cout<<sum(root);
     //cout<<diameter(root)<<endl;
     /*pair_ p=fastdiameter(root);
     cout<<p.height<<endl;
@@ -211,11 +214,11 @@ int main(){
     //bfs(root);
     //sum_replacement(root);
     //bfs(root);
-    if(isheightbalance(root).balance){
+    /*if(isheightbalance(root).balance){
         cout<<"balanced";
     }
     else{
         cout<<"unbalanced";
-    }
+    }*/
     return 0;
 }
