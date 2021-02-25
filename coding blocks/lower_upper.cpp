@@ -1,18 +1,22 @@
-#include<iostream>
-#include<cstring>
-#include<string>
+#include <iostream>
+#include <cstring>
+#include <string>
 using namespace std;
-int main(){
+int main()
+{
     char s;
-    cin>>s;
-    if(isupper(s)){
-        putchar(tolower(s));
+    cin >> s;
+    if (isupper(s))
+    {
+        cout << "UPPERCASE";
     }
-    else if(islower(s)){
-        putchar(toupper(s));
+    else if (islower(s))
+    {
+        cout << "lowercase";
     }
-    else{
-        cout<<"Invalid";
+    else
+    {
+        cout << "Invalid";
     }
     return 0;
 }

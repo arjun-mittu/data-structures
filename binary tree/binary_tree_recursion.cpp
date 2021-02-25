@@ -80,7 +80,7 @@ void printalllevels(node *root){
 void bfs(node *root){
     queue<node*> q; //contains address
     q.push(root);
-    q.push(NULL);
+    q.push(NULL);//for next level so to add to next line
     while (!q.empty())
     {
         node *f=q.front();
@@ -88,7 +88,7 @@ void bfs(node *root){
             cout<<endl;
             q.pop();
             if(!q.empty()){
-                q.push(NULL);
+                q.push(NULL); // adding at end for next levels
             }
         }
         else{
@@ -128,7 +128,7 @@ int diameter(node *root){
     }
     int h1=height(root->left);
     int h2=height(root->right);
-    int op1=h1+h2;
+    int op1=h1+h2;//root
     int op2=diameter(root->left);
     int op3=diameter(root->right);
     return max(op1,max(op2,op3));

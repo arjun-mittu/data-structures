@@ -6,7 +6,7 @@ int stringtoint(char *a,int n){
     if(n==0){
         return 0;
     }
-    int digit=a[n-1]-'0'; //last digit subtreacts ASCII values
+    int digit=a[n-1]-'0'; //last digit subtracts ASCII values
     int small_ans=stringtoint(a,n-1);
     return small_ans*10+digit;
 }
