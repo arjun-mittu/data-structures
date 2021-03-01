@@ -35,16 +35,18 @@ node *build()
 {
     int n;
     cin >> n;
-    
-    int data;    
+
+    int data;
     node *root = NULL;
-    for (int i = 0; i < n; i++)    {
+    for (int i = 0; i < n; i++)
+    {
         cin >> data;
         root = insertinBST(root, data);
-    //    cin>>data;
+        //    cin>>data;
     }
     return root;
 }
+vector<int> pre;
 void predorder(node *root)
 {
     if (root == NULL)
@@ -52,6 +54,7 @@ void predorder(node *root)
         return;
     }
     cout << root->data << " ";
+    pre.push_back(root->data);
     predorder(root->left);
     predorder(root->right);
 }
@@ -62,8 +65,14 @@ int main()
     while (t > 0)
     {
         node *root = build();
-        cout << "# Preorder:";
+        int k1, k2;
+        cin >> k1 >> k2;
+        cout << "# Preorder : ";
         predorder(root);
+        sort(pre.begin(), pre.end());
+        cout << endl;
+        cout << "# Nodes within range are : ";
+
         t--;
     }
     return 0;
