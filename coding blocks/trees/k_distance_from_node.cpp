@@ -116,6 +116,7 @@ int main()
     cin >> T;
     while (T > 0)
     {
+        check=0;
         int target_,k;
         cin>>target_>>k;
         node *target=target_search(root,target_);
