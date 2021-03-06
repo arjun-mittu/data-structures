@@ -61,6 +61,7 @@ int print_distance_k(node *root,node *target,int k){
     int DL=print_distance_k(root->left,target,k);
     if(DL!=-1){
         if(DL+1==k){
+            check=1;
             cout<<root->data<<" ";
         }
         else{
@@ -72,6 +73,7 @@ int print_distance_k(node *root,node *target,int k){
     if(DR!=-1){
         if (DR + 1 == k)
         {
+            check=1;
             cout << root->data << " ";
         }
         else
@@ -127,5 +129,5 @@ int main()
         cout<<endl;
         T--;
     }
-    return 0;
+    return 0; 
 }

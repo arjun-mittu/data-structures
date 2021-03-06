@@ -4,6 +4,7 @@
         "utility": "cpp",
         "algorithm": "cpp",
         "limits": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "unordered_map": "cpp"
     }
 }
