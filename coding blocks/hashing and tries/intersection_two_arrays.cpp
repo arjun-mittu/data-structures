@@ -6,26 +6,45 @@
 using namespace std;
 #define ll long long int
 int main(){
-    ll n;
+    int n;
     cin>>n;
-    ll arr1[n],arr2[n];
-    vector<ll> com;
-    unordered_map<ll> m;
-    for(ll i=0;i<n;i++){
+    int arr1[n],arr2[n];
+    unordered_map<int, int> m;
+    for(int i=0;i<n;i++){
         cin>>arr1[i];
-        
+        m[arr1[i]]++;
     }
-    for (ll i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> arr2[i];
-        if(s.find(arr2[i])!=s.end()){
-            com.push_back(arr2[i]);
+    }
+    sort(arr2,arr2+n);
+    cout<<"[";
+    int checkf=0;
+    for(int i=0;i<n;i++){
+            if(m[arr2[i]]>0){
+                 m[arr2[i]]-=1;
+                 if(checkf==0){
+                     cout<<arr2[i];
+                     checkf=1;
+                 }
+                 else{
+                     cout<<", "<<arr2[i];
+                 }
+             }
+    }
+    cout<<"]";
+    /*vector<int> ans;
+    for(int i = 0; i < n; i++){
+        if(m[arr2[i]] > 0){
+            m[arr2[i]]--;
+            ans.push_back(arr2[i]);
         }
     }
-    for(auto x:com){
-        cout<<x;
-    }
-    
-
+    int f=0;
+    cout<<"[";
+    for(auto x: ans){
+        cout<<", "<<x;
+    }*/
     return 0;
 }
