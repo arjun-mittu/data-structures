@@ -84,7 +84,7 @@ int main(){
     for(int i=0;i<m;i++){
         int x,y,w;
         cin>>x>>y>>w;
-        g.addEdge(x - 1, y - 1, w); //spoj mei indexing 1 se hai isliye -1 kiya
+        g.addEdge(x, y, w); //spoj mei indexing 1 se hai isliye -1 kiya
     }
     cout<<g.krsukal_mst()<<endl;
     return 0;

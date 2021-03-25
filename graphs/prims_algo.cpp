@@ -61,4 +61,4 @@ int main(){
     }
     cout<<g.prim_mst()<<endl;
     return 0;
-}
+} 
