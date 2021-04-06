@@ -6,7 +6,7 @@ void spiralprint(int a[][10],int m,int n){
 	int sc=0;
 	int er=n-1;
 	int ec=m-1;
-	while(sr<=er and sc<=ec){
+	while(sr<=er && sc<=ec){
 		for(int i=sc;i<=ec;i++){
 			cout<<a[sr][i]<<" ";
 		}
