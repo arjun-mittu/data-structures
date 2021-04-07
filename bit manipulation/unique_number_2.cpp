@@ -17,9 +17,12 @@ int main(){
         pos++;
         temp=temp>>1;
     }
+    //first bit im xor is at position 'pos'
     int mask=(1<<pos);
+
     int x=0;
     int y=0;
+    //find those numbers which contain set bit at position pos
     for(int i=0;i<n;i++){
         if((a[i]&mask)>0){
             x=x^a[i];

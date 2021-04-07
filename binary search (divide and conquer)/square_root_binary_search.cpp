@@ -22,6 +22,7 @@ float square_root(int n,int p){
         while(ans*ans<=n){
             ans=ans+inc;
         }
+        //overshoot  the value
         ans=ans-inc;
         inc=inc/10;
     }
