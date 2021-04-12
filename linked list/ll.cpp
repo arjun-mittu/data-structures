@@ -167,6 +167,7 @@ void reverse(node *&head){
 }
 node *recreverse(node *head){
     //smallest linked list
+    //head->next==NULL only single node linked list 
     if(head->next==NULL || head==NULL){
         return head;
     }
@@ -176,7 +177,9 @@ node *recreverse(node *head){
     /*node *temp=shead;
     while(temp->next!=NULL){
         temp=temp->next;
-    }*/
+    }
+    head->next = NULL;
+    temp->next = head;*/
     // modfied approach
     node *temp=head->next;
     head->next=NULL;
