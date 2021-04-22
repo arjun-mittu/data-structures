@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//divide and conquer
 int merge(int *a,int s,int e){
     int mid=(s+e)/2;
     int i=s;
