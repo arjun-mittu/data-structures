@@ -28,9 +28,9 @@ int main(){
             q.pop_front();
         }
         //2. remove the elements which are not useful and are in window
-        while(!q.empty() && a[i]>= a[q.back()]){
-            q.pop_back();
-        }
+            while(!q.empty() && a[i]>= a[q.back()]){
+                q.pop_back();
+            }
 
         //3. add the new elements(expansion)
         q.push_back(i);
