@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long int
 int solve(int n)
 {
     int dp[10000];
@@ -10,7 +11,7 @@ int solve(int n)
     }
     int i2 = 0, i3 = 0, i5 = 0;
     int next_2 = 2, next_3 = 3, next_5 = 5;
-    int next=1;
+    int next = 1;
     for (int i = 1; i < n; i++)
     {
         next = min(next_2, min(next_3, next_5));
@@ -33,7 +34,7 @@ int solve(int n)
     }
     return next;
 }
-int main()
+int32_t main()
 {
     int t;
     cin >> t;
@@ -41,7 +42,7 @@ int main()
     {
         int n;
         cin >> n;
-        cout<<solve(n)<<endl;
+        cout << solve(n) << endl;
     }
 
     return 0;
