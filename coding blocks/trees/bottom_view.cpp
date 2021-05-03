@@ -42,28 +42,27 @@ node *build()
     }
     return root;
 }
-void verticalview(node *root, int d, map<int, vector<int>> &m)
-{
-    if (root == NULL)
-    {
-        return;
+void bottom_view(node *root,int hd,int height,map<int,pair<int,int>> &m){
+    if(root==NULL) return ;
+    if(m.find(hd)==m.end()){
+        m[hd]={root->data,height};
     }
-    m[d].push_back(root->data);
-    verticalview(root->left, d - 1, m);
-    verticalview(root->right, d + 1, m);
-    return;
+    else{
+        if(m[hd].second<=height){
+            m[hd]={root->data,height};
+        }
+    }
+    bottom_view(root->left,hd-1,height+1,m);
+    bottom_view(root->right,hd+1,height+1,m);
 }
 
 int main()
 {
     node *root = build();
-    map<int, vector<int>> m;
-    verticalview(root, 0, m);
-    for (auto p : m)
-    {
-        //cout << p.first << "->";
-        //int size=p.second.size();
-        cout<<p.second.back()<<" ";
+    map<int, pair<int,int>> m;
+    bottom_view(root,0,0,m);
+    for(auto x:m){
+        cout<<x.second.first<<" ";
     }
     return 0;
 }

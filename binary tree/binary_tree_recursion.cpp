@@ -158,7 +158,7 @@ int diameter(node *root)
     }
     int h1 = height(root->left);
     int h2 = height(root->right);
-    int op1 = h1 + h2; //root
+    int op1 = h1 + h2; //root h1+h2+1
     int op2 = diameter(root->left);
     int op3 = diameter(root->right);
     return max(op1, max(op2, op3));
@@ -420,7 +420,7 @@ int finddistance(node *root, int a, int b)
     node *lca_node = lca(root, a, b);
     int l1 = search_level(lca_node, a, 0);
     int l2 = search_level(lca_node, b, 0);
-    return l1+l2;
+    return l1 + l2;
 }
 int main()
 {
@@ -475,6 +475,6 @@ int main()
    node *lca_node= lca(root,6,9);
    cout<<"\n"<<lca_node->data;*/
     // cout<<"max sum path="<<maxsumpath(root).maxsum;
-    cout<<"dist of "<<finddistance(root,6,9);
+    cout << "dist of " << finddistance(root, 6, 9);
     return 0;
 }
