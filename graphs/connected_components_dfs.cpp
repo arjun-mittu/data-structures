@@ -41,7 +41,7 @@ public:
             T node = p.first;
             visited[node] = false;
         }
-        //ierate over all the certices and initiate a dfs call
+        //iterate over all the certices and initiate a dfs call
         int cnt = 0;
         for(auto p:l){
             T node=p.first;

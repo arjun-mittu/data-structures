@@ -71,21 +71,21 @@ public:
     }
 };
 int main(){
-    /*Graph g(4);
+    Graph g(4);
     g.addEdge(0,1,1);
     g.addEdge(1,3,3);
     g.addEdge(3,2,4);
     g.addEdge(2,0,2);
     g.addEdge(0,3,2);
-    g.addEdge(1,2,2);*/
-    int n,m;
+    g.addEdge(1,2,2);
+    /*int n,m;
     cin>>n>>m;
     Graph g(n);
     for(int i=0;i<m;i++){
         int x,y,w;
         cin>>x>>y>>w;
         g.addEdge(x, y, w); //spoj mei indexing 1 se hai isliye -1 kiya
-    }
+    }*/
     cout<<g.krsukal_mst()<<endl;
     return 0;
 }
