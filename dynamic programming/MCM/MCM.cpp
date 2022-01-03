@@ -54,6 +54,6 @@ int main(){
     //cout<<solve(arr,1,n-1);
     //memset(dp_top,-1,sizeof dp_top);
     //cout<<solve_top_down(arr,1,n-1);
-    //cout<<solve_bottomup(arr,n);
+    cout<<solve_bottomup(arr,n);
     return 0;
 }
